@@ -1,0 +1,44 @@
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Bopriskarta</title>
+
+        <link rel="stylesheet" media="screen" href='@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.css"))'>
+        <link rel="stylesheet" media="screen" href='@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap-theme.min.css"))'>
+        <link rel="stylesheet" href='@routes.Assets.at("stylesheets/main.css")'/>
+
+        <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+        <script type="text/javascript">
+            window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":null,"theme":"dark-top"};
+        </script>
+    </head>
+    <body class="noselect">
+        @navbar()
+        <div class="container" style="margin-top: 30px">
+            <div class="page-header">
+                <h1>Administration</h1>
+            </div>
+            <p>
+                <button
+                onclick="pricemap.Admin().download()"
+                type="button"
+                class="btn btn-default">Download data from Booli</button>
+            </p>
+            <p>
+                <button
+                onclick="pricemap.Admin().rebuildDb()"
+                type="button"
+                class="btn btn-default">Rebuild database</button>
+            </p>
+            <p>
+                <button onclick="pricemap.Admin().tryQuery()"
+                type="button"
+                class="btn btn-default">Try Query</button>
+            </p>
+        </div>
+        @playscalajs.html.scripts("client")
+    </body>
+</html>

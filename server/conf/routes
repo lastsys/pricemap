@@ -1,0 +1,9 @@
+GET /                    @controllers.Application.index()
+GET /admin               @controllers.Application.admin(key: String)
+POST /admin/download     @controllers.Application.adminDownload(key: String)
+POST /admin/rebuilddb    @controllers.Database.rebuildDatabase(key: String)
+POST /admin/tryquery     @controllers.Database.tryQuery(key: String)
+GET /tile/:zoom/:x/:y    @controllers.Tiles.tile(zoom: Int, x: Int, y: Int)
+
+GET /assets/*file        controllers.Assets.at(path="/public", file)
+GET /webjars/*file       controllers.WebJarAssets.at(file)
