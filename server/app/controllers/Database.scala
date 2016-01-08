@@ -22,8 +22,7 @@ class Database extends Controller with BooliObjectTable with HasDatabaseConfig[J
 
   val BooliObjects = TableQuery[BooliObjects]
 
-  def rebuildDatabase() = Action {
-    val key = Configuration.adminKey
+  def rebuildDatabase(key: String) = Action {
     if (key != Configuration.adminKey) {
       NotFound
     } else {
@@ -87,8 +86,7 @@ class Database extends Controller with BooliObjectTable with HasDatabaseConfig[J
     }
   }
 
-  def tryQuery() = Action.async {
-    val key = Configuration.adminKey
+  def tryQuery(key: String) = Action.async {
     if (key != Configuration.adminKey) {
       Future(NotFound)
     } else {

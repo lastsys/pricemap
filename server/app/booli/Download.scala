@@ -81,7 +81,7 @@ object Download {
     val cmplxReq = request.withHeaders(
       "Accept" → "application/json",
       "User-Agent" → "bopriskarta/1.0",
-      "Referrer" → "http://www.bopriskarta.se")
+      "Referrer" → sys.env("PRICEMAP_REFERRER"))
       .withQueryString(
         "bbox" → "55,10,70,25",
         "maxpages" → 0.toString,

@@ -1,3 +1,7 @@
+# --- environment files
+env.sh
+env.bat
+
 # Created by .ignore support plugin (hsz.mobi)
 
 ### Python template

@@ -3,13 +3,11 @@ package booli
 import org.osgeo.proj4j.{CRSFactory, CoordinateTransformFactory}
 
 object Configuration {
-  val user = sys.env("pricemap_booli_user") //"lastsys"
-  val token = sys.env("pricemap_booli_token")
-  //wFtevfqYYMVXFyeqgLRsZHAdDkCIOlilHbnxhGVk"
+  val user = sys.env("PRICEMAP_BOOLI_USER")
+  val token = sys.env("PRICEMAP_BOOLI_TOKEN")
   val url = "https://api.booli.se/sold"
   val pageSize = 500
-//  val outputPath = "C:/Users/Stefan/Documents/Projects/booli2-data"
-  val outputPath = sys.env("pricemap_output_path") //"booli2-data"
+  val outputPath = sys.env("PRICEMAP_OUTPUT_PATH")
   val tileCachePath = s"$outputPath/tiles"
   val tileSize = 256
 
@@ -23,8 +21,7 @@ object Configuration {
   val maxScaleSquareMeterPrice = 100000.0
   val maxOutlierSquareMeterPrice = 300000.0
 
-  val adminKey = sys.env("pricemap_admin_key")
-  //5dea4dfb-0ff0-4601-a16a-1659ed35be12"
+  val adminKey = sys.env("PRICEMAP_ADMIN_KEY")
 
   val proj = {
     val ctFactory = new CoordinateTransformFactory()
